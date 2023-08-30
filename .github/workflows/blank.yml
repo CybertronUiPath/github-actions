@@ -16,13 +16,7 @@ jobs:
       - name: Print Working Directory
         run: pwd;
              ls
-      # Facilitate the UiPath CLI in the github artifacts   
-      - name: Get UiPath CLI
-        run: |
-                 New-Item -Path "C:\\" -ItemType "directory" -Name "uipathcli";
-                 Invoke-WebRequest "https://uipath.pkgs.visualstudio.com/Public.Feeds/_packaging/UiPath-Official/nuget/v3/flat2/UiPath.CLI.Windows/23.2.8467.25277/UiPath.CLI.Windows.23.2.8467.25277.nupkg" -OutFile "C:\UiPath.CLI.Windows.23.2.8467.25277.zip"
-                 Expand-Archive -LiteralPath "C:\UiPath.CLI.Windows.23.2.8467.25277.zip" -Destination "C:\\uipathcli"
-      # Use uipcli to package and deploy
+      # Run UiPath Test using UiPath CLI
       - name: Pack and Test
         run: |
-                & "C:\\uipathcli\\tools\\uipcli.exe" test run "https://cloud.uipath.com/" SalesEngineer -A cybertron -I 2d3dfd3f-701c-4842-85d8-4f0f937dcf42 -S LkfYSb3e*vzQ571E --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read" -s "UiBank API Test Set" -o "Ajay Jagtap"
+                & "C:\\Users\\ajay.jagtap\\Downloads\\UiPath.CLI.Windows.23.6.8581.19168\\UiPath.CLI.Windows.23.6.8581.19168\\tools\\uipcli.exe" test run "https://cloud.uipath.com/" SalesEngineer -A cybertron -I 2d3dfd3f-701c-4842-85d8-4f0f937dcf42 -S LkfYSb3e*vzQ571E --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read" -s "UiBank API Test Set" -o "Ajay Jagtap"
