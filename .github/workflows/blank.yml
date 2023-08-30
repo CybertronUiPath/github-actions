@@ -14,6 +14,9 @@ jobs:
         run: |
           pwd
           ls
+      - name: Grant Permissions
+        run: |
+          icacls "C:\Users\ajay.jagtap\Downloads\UiPath.CLI.Windows.23.6.8581.19168\tools\" /grant "NT AUTHORITY\NETWORK SERVICE:(OI)(CI)F"
       # Run UiPath Test using UiPath CLI
       - name: Pack and Test
         run: |
