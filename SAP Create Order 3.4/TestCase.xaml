@@ -1,0 +1,397 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TestCase" this:TestCase.Order_Type="OR" this:TestCase.Sales_Org="1710" this:TestCase.Distribution_Channel="10" this:TestCase.Division="00" this:TestCase.Sold_to_Party="17100100" this:TestCase.Ship_to_Party="17100100" this:TestCase.Customer_Reference="Customer 1" this:TestCase.Reference_Date="03/04/2022" this:TestCase.Material="TG11" this:TestCase.Quantity="1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:SAP_Logging_S4H;assembly=SAP Logging S4H" xmlns:s1="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ucas="clr-namespace:UiPath.Core.Activities.SAP;assembly=UiPath.UiAutomation.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uta="clr-namespace:UiPath.Testing.Activities;assembly=UiPath.Testing.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Order_Type" Type="InArgument(x:String)" />
+    <x:Property Name="Sales_Org" Type="InArgument(x:String)" />
+    <x:Property Name="Distribution_Channel" Type="InArgument(x:String)" />
+    <x:Property Name="Division" Type="InArgument(x:String)" />
+    <x:Property Name="Sold_to_Party" Type="InArgument(x:String)" />
+    <x:Property Name="Ship_to_Party" Type="InArgument(x:String)" />
+    <x:Property Name="Customer_Reference" Type="InArgument(x:String)" />
+    <x:Property Name="Reference_Date" Type="InArgument(x:String)" />
+    <x:Property Name="Material" Type="InArgument(x:String)" />
+    <x:Property Name="Quantity" Type="InArgument(x:String)" />
+    <x:Property Name="MessageNo" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:TestCase.MessageNo>
+    <InArgument x:TypeArguments="x:String" />
+  </this:TestCase.MessageNo>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>820,5357</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="82">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>SAP_Logging_S4H</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Platform.Triggers</x:String>
+      <x:String>UiPath.Platform.Triggers.Scope</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Testing.Activities</x:String>
+      <x:String>UiPath.Testing</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="70">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>SAP Logging S4H</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="830,5332" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="SapReturnMessage" />
+      <Variable x:TypeArguments="x:String" Name="Order_No" />
+      <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="TdQ" />
+      <Variable x:TypeArguments="x:String" Name="MessageNo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="788,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Blank Test Case" />
+    <s:SAP_Logon DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="788,22" sap2010:WorkflowViewState.IdRef="SAP_Logon_1" />
+    <ucas:CallTransaction DisplayName="Call Transaction 'saplogon.exe SAP'" sap:VirtualizedContainerService.HintSize="788,159" sap2010:WorkflowViewState.IdRef="CallTransaction_1" Transaction="VA01">
+      <ucas:CallTransaction.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="7694372f-14e2-4698-8426-64d1540854ec" InformativeScreenshot="3002e1145f796e02e9ee1155e9f3ded9" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access*' /&gt;">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ucas:CallTransaction.Target>
+    </ucas:CallTransaction>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Create Sales Documents" sap:VirtualizedContainerService.HintSize="788,4249" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="bcb42fb1-bbcf-4da9-b243-bbac1b259c9a" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="754,3960" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="Order_Type" />
+              <Variable x:TypeArguments="x:String" Name="Sales_Org" />
+              <Variable x:TypeArguments="x:String" Name="Distribution_Channel" />
+              <Variable x:TypeArguments="x:String" Name="Division" />
+              <Variable x:TypeArguments="s1:String[]" Name="MessageData" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Sales'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Text="OR" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="287, 274, 59, 33" ElementType="InputBox" FriendlyName="'CTextField Sales'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-AUART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-AUART' /&gt;" Guid="b61801fa-18c0-4878-b30a-71778562b54c" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAlCAYAAAD1EjEiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABSSURBVGhD7c+xDYBAEMAw1qekZdErH30NTBBHygA+ZmZVh9+f1535E18IHh4eHr4QPDw8PHwheHh4ePhC8PDw8PCF4OHh4eEL/eIrv/DFw/hZD2R3Pk7TXGHvAAAAAElFTkSuQmCC" InformativeScreenshot="cf6ecf71a7eaee70a714f5b1cb07a514.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into '1710'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_2" Text="1710" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="287, 394, 59, 33" ElementType="InputBox" FriendlyName="'1710'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-VKORG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-VKORG' /&gt;" Guid="b4710729-8d68-4ae6-ab2e-b2f70965a94d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAD8AAAAlCAYAAAD1EjEiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAF8SURBVGhD7ZYxsoMgEIZzpxQpchRnnNxExy5l2lc5ehI8CZzCcgO4Pg2CsBZ5yWP/mS0Sll8/dkFO4zhCrsHwJu6Pn2zCC5+DGJ7hGZ7hGT4HMTzDk+AViPoG58sVKoF/vUhBW17teDDKHiRmL4r5ztJ5XQPFr98Nqk7hWLro8GqAagUWekkpBhDe6Kf59YCZqERfI1GbHAOMnvNCuJ4REeH1C5qHmKqp3j5wv0IeeecRfEPjorEL0hIagAzf6tW17XoQ3lZt0/LpvrIz26KB7fC0gAWh/YnwKx2BT5kTyfEvnhGeM4TWfyt8uGor7fo6gLbVl9zwwvj1RvjEtqTA69yqXPb5x8JPVU84kCjwjj4UnrAfI77ft+edvbmriO/Xnfakdoz54rgLmbytVqLBK32tnG9qeKsq5luWDul7cOBlX0T0nUB1Tt3jHPxNqLoRDR7bNxS+atmqxz5vB3zln9zt/5EYnuEZnuEZPgcxPMM78LnEBj7HyBh+hCdTpvrL2+aR0gAAAABJRU5ErkJggg==" InformativeScreenshot="495519428b614e66fbba92abcca5bb6e.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents' /&gt;" SearchSteps="Selector">
+                  <uix:TargetAnchorable.PointOffset>
+                    <uix:PointOffset X="-6" Y="5" />
+                  </uix:TargetAnchorable.PointOffset>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Distribution'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_3" Text="10" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="287, 434, 35, 33" ElementType="InputBox" FriendlyName="'CTextField Distribution'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-VTWEG' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-VTWEG' /&gt;" Guid="9fa12ba6-eabb-4eba-b561-271a84eec738" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAlCAYAAADBa/A+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABSSURBVFhH7c6hDQAgFMRQ1kdiWfRLGAAwVUfSJvWvVdVK/Q9cHzPmKy4hcTRxNHE0cTRxNHE0cTRxNHE0cTRxNHE0cTRxNHG0Jy7lA5d4MK7WBqe9sgzpbH3mAAAAAElFTkSuQmCC" InformativeScreenshot="c1275e2a0a9a28b3354699c9ce9aa407.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Division'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_4" Text="00" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="287, 474, 35, 33" ElementType="InputBox" FriendlyName="'CTextField Division'" FullSelectorArgument="&lt;sap id='usr/ctxtVBAK-SPART' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/ctxtVBAK-SPART' /&gt;" Guid="eb6729a0-41af-4bb4-8b43-3486ec4eac51" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAlCAYAAADBa/A+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAABSSURBVFhH7c6hDQAgFMRQ1kdiWfRLGAAwVUfSJvWvVdVK/Q9cHzPmKy4hcTRxNHE0cTRxNHE0cTRxNHE0cTRxNHE0cTRxNHG0Jy7lA5d4MK7WBqe9sgzpbH3mAAAAAElFTkSuQmCC" InformativeScreenshot="79785bd6018fe90a3fe97ed9a6a5329f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Continue'" sap:VirtualizedContainerService.HintSize="712,156" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="2255, 1347, 92, 35" ElementType="Button" FriendlyName="'Continue'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[0]' check:text='Continue' /&gt;" Guid="8a1c4201-c4d7-46ea-be20-7b515c927eab" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGAAAAAnCAYAAADwxU3sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAANLSURBVGhD7Zu7ihRBFIZlUp9EH8SXMNhHMDI3EIyNjGRDIzMRM8FExETdYBHFC7gg4gVxFy8opV87v5wuT81UY/XUqOeDn549XV2X89dlduk9tlgsUklBG7zcSoMBQR9cA24/OUynLz9LJ8/tp+Nn7ocaiFySU3Jr+c2A89dfuhWE2okci5EBuOM9EGovrYSRASwRr3Covcg1jAyIPX9zItcwGDB8+oFXMDSfRBjQSSIM6CQRBnSSCAM6SfxTBly69To9evVpuHr3t0lisgGnLj5Od54epTeHX5dPpuHzzYcf0onOX2XVpxfvvrj3t0likgHMrFUcff6Wdnafu8+2lPrBbLdxJgFwtfFtlKg2gMRaru29T2evHgzSwAET5l4JJB5yA/4miWoD9g4+LkumIen5fWIk5MKN8R/0iNtn2SbYwnKTBOWpQ9sJV7unezAZuOcZoxhlmET6mYmSrxSh+iSvXpSPja0vH39JotoAQYPefU+rtiw6a00QGmwOZw/luE/ygCs/yyAvUYrRnp6zeObWGEDyBZOE+oWtsyRRZYBtLO9cSSRXA6ZzSqA1hZWg8hbaoM0rd98uI+N2vYSU4ooBk0crTH2zZUWNAVqhdkLyHFC3YiWJyQbw2SuTyyY6X5YakO2osINE3kC9hJTiitGWXXGYr7hiYp0B9jy0Y2OSiXV5ErOtAM0GqLkn1g2+FJta9k/6YPNRoqkBSNSeAf+LAWyvxHOt+zouqg0g8cJzlwbpDFsPS33VFqQDi+1FMdHTAPXLlrVnmeJ2C6o5cD2JagNso3SIAWAE4rM6CZTND2Htv6WDVUwxQPWq7lVlbQx5BqgsMGkYm514tg6dTXZsXPlqm084T6LaAITbNtE53LMzwq6CHNtxJGoM0AEq9IxX1oshzwCvv4zJWxkkuQTlVa4kMckAVPpbEDF91bTKZxFlGbxNPhI1BtCO4sCqKpX1YsgzADGD7cplNes3/bwOb2zkIR+bJ5EZcG9UKDSfxOQVEGojkRnwYFQoNJ9ErIBOEmFAJ4kwoJNEvBnXQaM342RAvBu6Obnvhsbb0ZuT+3Y0xP8HzK/i/wcI3GGJxJnQTuSSnGrmC9eAYHP8MqCkoA1ebn9qkb4DlZl5UW4ITjQAAAAASUVORK5CYII=" InformativeScreenshot="5927dbb1685326fdc4238f69b2146d17.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents' /&gt;" SearchSteps="Selector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Sold-To Party'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_5" Text="17100100" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="227, 234, 131, 33" ElementType="InputBox" FriendlyName="'CTextField Sold-To Party'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUAGV-KUNNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUAGV-KUNNR' /&gt;" Guid="46b41a91-492d-43a5-88e8-a188a6b6b496" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIcAAAAlCAYAAABoM/rvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB+SURBVHhe7dKxDYAwAMAw3mdk5dGORTAwQPOBLeWDbGOMKa0yh7J3jv04paflHGAOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlIOYd095tD+mYORWNe3Fzi9vuT9cwAAAAASUVORK5CYII=" InformativeScreenshot="2487ccbec73e8dfebd6719438be4678f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Ship-to party'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_6" Text="17100100" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="227, 274, 131, 33" ElementType="InputBox" FriendlyName="'CTextField Ship-to party'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUWEV-KUNNR' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/subPART-SUB:SAPMV45A:4701/ctxtKUWEV-KUNNR' /&gt;" Guid="057fc15c-4f84-4ef9-9d8c-db270bcf1945" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIcAAAAlCAYAAABoM/rvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB+SURBVHhe7dKxDYAwAMAw3mdk5dGORTAwQPOBLeWDbGOMKa0yh7J3jv04paflHGAOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlI5iCZg2QOkjlIOYd095tD+mYORWNe3Fzi9vuT9cwAAAAASUVORK5CYII=" InformativeScreenshot="a099c96036f23c50ffcc8d0570afb525.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TextField Customer'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_7" Text="[&quot;Customer Ref&quot; + &quot; &quot; + Now.ToUniversalTime.ToString]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="227, 314, 275, 33" ElementType="InputBox" FriendlyName="'TextField Customer'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/txtVBKD-BSTKD' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/txtVBKD-BSTKD' /&gt;" Guid="ff667b9e-d35f-4844-a075-a4383a45154f" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAARcAAAAlCAYAAABoFq3GAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAClSURBVHhe7dSxCYBAAMBAF3Bbl3aCL9/ORkRQ091BVsgyxpiS9HfmIinpnMu+rZL0OXORlHQ7F4A3zAVImAuQMBcgYS5AwlyAhLkACXMBEuYCJMwFSJgLkDAXIGEuQMJcgIS5AAlzARLmAiTMBUiYC5AwFyBhLkDCXICEuQAJcwES5gIkzAVImAuQMBcgYS5A4nEukvQlc5GUdJmLJP2ZuUgKGvMApBHEXVN/LzwAAAAASUVORK5CYII=" InformativeScreenshot="dcfcf450bccb380641441eccc100d48a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'CTextField Customer'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_8" Text="[Now.ToShortDateString]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="695, 314, 131, 33" ElementType="InputBox" FriendlyName="'CTextField Customer'" FullSelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/ctxtVBKD-BSTDK' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subSUBSCREEN_HEADER:SAPMV45A:4021/ctxtVBKD-BSTDK' /&gt;" Guid="55768fc6-c475-4682-a6a1-dd12c6525986" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIcAAAAlCAYAAABoM/rvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACBSURBVHhe7dIxDYBAAMBADOAW0yj48UkYGIAGAdwlddBljDGlt8yh7Jpj31bpzBzKcg7+yxwkc5DMQTIHyRwkc5DMQTIHyRwkc5DMQTIHyRwkc5DMQTIHyRwkc5DMQTIHyRwkc5DMQTIHyRwkc5DMQTIH6XMOyRzKHnNI98yhaMwDz86TvEIUND0AAAAASUVORK5CYII=" InformativeScreenshot="76658004648d003ef387a51bf05b2ad8.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Button Create Item'" sap:VirtualizedContainerService.HintSize="712,156" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="71, 793, 35, 35" ElementType="Button" FriendlyName="'Button Create Item'" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/subSUBSCREEN_BUTTONS:SAPMV45A:4050/btnBT_POAN' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/subSUBSCREEN_BUTTONS:SAPMV45A:4050/btnBT_POAN' /&gt;" Guid="c330dfac-9496-44dd-91c4-98c71b1d50f4" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHLSURBVFhH7Zi/SgNBEIev9TlsfArfQrCwFywtLW2DPoGFZRAhgvFfIwERBTWCgp0gGvApjpVPbmRzZGc2d0luE/zBsNns3P6+m91LuM3yPHepxnzB3b59u/XWtVvZOnZLa4dTD3zww7fMMgS32+7/XbSx33N7J6/u6nkwtWB+fMQTf58nE2JaEpY3j1zn7sPNUvjhi7/Pk1FSOrQMzhpMhC/+Pk/GmtOhpcRNCn+fJ4OWDi17oEnh7/MMwZ0+fBZpzYiH5B+uiiYOJz8B5Wh1XoqMeE0MjnwiBCHQ2wf3xTe2asO1b97HMiUX0BjVghMw2nG0utP9DUu14MgJLSOVZDwkqmdVuzIcE2vLY8FxU9o4qgzHuPYEWnDIql4lONlrmmLgyNH2XiU4KlZeUvpcY4VfqVHz+Fo8OAy0SVHMsgKn5SzenkOMc+chxcBRffJCUuG6Cpx11xZcTPVVuLPHryJttMjRqqfJqhpS4c6fdLhG/1svDDgkgFYVRORaT7qoNpyIfCK0zAAxHnsTSIW77A+KtHgJRDmq7E0VjsEmpcIl996a9Bt/0mclSZ8y8UEiufM5v0NATElZc7lomoEPflIxP+brTDidyN0PajwO9W1/F9MAAAAASUVORK5CYII=" InformativeScreenshot="89cf07a71fe74e54d0c864737442b04f.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'CTextField Material'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_9" Text="TG11" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="147, 910, 486, 31" ElementType="InputBox" FriendlyName="'CTextField Material'" FullSelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Material' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' /&gt;" Guid="2078a9fc-6c11-4041-82a7-6d622f54b3c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAeoAAAAjCAYAAABb/UnyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADVSURBVHhe7dfRCcNADAXB6x836ALcwDVwsRJIDfsxAw+VsGjtvc/zPGeumZmZNXZd1/eu+76PmZmZtTahnrvOaz5qAKBjQj2EGgCChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAMKEGgDChBoAwoQaAML+oZ5Im5mZWWsT6rk+agAI+n3U53wAtQ4JP9+hUsQAAAAASUVORK5CYII=" InformativeScreenshot="3b7c63302a7151fd747f1548b0dffe45.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Double" DisplayName="Type Into 'TextField Order Quantity'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="712,216" sap2010:WorkflowViewState.IdRef="NTypeInto_10" Text="1" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="833, 910, 234, 31" ElementType="InputBox" FriendlyName="'TextField Order Quantity'" FullSelectorArgument="&lt;sap colTooltip='Order Quantity' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='0' /&gt;" FuzzySelectorArgument="&lt;sap colTooltip='Order Quantity' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' /&gt;" Guid="fdb805cb-e2a9-4ef3-9f30-96274a1aba6e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAO4AAAAjCAYAAACTmDZIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACgSURBVHhe7dWBCQMhFAVB++/QAmzABkwkXGq4hRl4+BtYHHvvs9Y69zWzd+9pdcw5j5m1Ns7XrRh4v6dV4UKIcCFIuBAkXAgSLgQJF4KEC0HChSDhQpBwIUi4ECRcCBIuBAkXgoQLQcKFIOFCkHAhSLgQJFwIEi4ECReChAtBwoUg4UKQcCFIuBAkXAgSLgQJF4L+4d7DzFrz40LIr9VzPoK1wsnFA/YVAAAAAElFTkSuQmCC" InformativeScreenshot="1eb033da5b14831c34d063996e92c653.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="712,156" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="2411, 1347, 56, 35" ElementType="Button" FriendlyName="'Save'" FullSelectorArgument="&lt;sap id='tbar[0]/btn[11]' /&gt;" FuzzySelectorArgument="&lt;sap id='tbar[0]/btn[11]' check:text='Save' /&gt;" Guid="2f885e51-e106-4347-bfb4-6cc5ec31dd11" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADwAAAAnCAYAAABT7SsqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAJ2SURBVGhD7Zm9ihRBFIXNfRJ9EF/CwEfYyNxAMDYyEsONzETMBBMRE3UDWRR/wAURfxB38Qel5BvnG87U1uzWGE13z4HDdFffqr7n3tPVA32mTAxbwQ9fHZaLN9+U81eel7M7TwdJckcDWmosCb56931zgSETTYmFYKrRmjAGZqcXgrFAK3gMRJtYCB7yM3sa0SYWgluBY6LYCh4rxVbwWCm2gk/ihesvy6PXR+XT4e/5rDI7Zuzy7YPmnE2h6BZ86dbbcvTzzzy6jWv3NvevqegWTBcBolMYneUazPhNo+gW/OLDj1kcFj7X8a+MmDt7X5fsv3fwfeYUr4v7+9+OzRWs4fiNBx/Luy+/5leW1zuNolvw7uPP88h/ojk/6WaZWAKHsBcQQ8KA9XIuwoSxCBesbSFZr0e06BZM1VsiuDF2NjGJ7XGF4/wKu9YSBi0E96vnUmjjdB3xjq2i6BYMWzYVPZU2QX45Zz03whRSj6W7mGNcFsyxVRRrCU4ijkQUAewIZDOzUzUUDN0MHcMZwq6nnVfB9VZR/LfgZArjHLECN5BwOiMFp0C6xwYG0qYpmLktGruKYq1nmCTSUjITqs8zviUYamHEG4NdvZ6Wzmd9HYpuwW5YJEcydBFybMJaOgWbYCZdC05biyxUblr5vmecJvQUQXQLzg2iBUS7aaWlExamFpy2BmlnqdVbqN/jLYq1nmEqSYVzl+a49VrKzhODKJ/11jNnLEg7JxnPVyPHuKkVW1NUgp8sBY2JYq0OD5miEvxsKWhMFFPv8Hgppit4cl8eJvdtaXJfD8Gkvg8LqoEFhvxMkzsasrPimOCxY2KCS/kLkxc5eavIkV0AAAAASUVORK5CYII=" InformativeScreenshot="f082fe7b7ddb69c924aeb91f73ef056a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;" SearchSteps="Selector" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="712,339" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_3" Operator="Contains" OutputArgument="MessageType" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="False">
+              <uta:VerifyControlAttribute.ActivityToTest>
+                <ActivityAction>
+                  <ucas:ReadStatusbar ContinueOnError="{x:Null}" DisplayName="Read Status Bar 'Statusbar Standard'" sap:VirtualizedContainerService.HintSize="334,265" sap2010:WorkflowViewState.IdRef="ReadStatusbar_3" MessageText="[SapReturnMessage]">
+                    <ucas:ReadStatusbar.MessageData>
+                      <OutArgument x:TypeArguments="s1:String[]">
+                        <VariableReference x:TypeArguments="s1:String[]" sap2010:WorkflowViewState.IdRef="VariableReference`1_4">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="s1:String[]" Name="_autogenerated_MessageData" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageData>
+                    <ucas:ReadStatusbar.MessageId>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_2">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageId" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageId>
+                    <ucas:ReadStatusbar.MessageNumber>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_3">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageNumber" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageNumber>
+                    <ucas:ReadStatusbar.MessageType>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_1">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" x:Name="__ReferenceID0" Name="_autogenerated_MessageType" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageType>
+                    <ucas:ReadStatusbar.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1742b067-0ed5-422e-8452-b2bf60a528ba" InformativeScreenshot="fabc48b7119251c25a5c84f3a40ab623" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;&lt;sap id='sbar' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ReadStatusbar.Target>
+                  </ucas:ReadStatusbar>
+                </ActivityAction>
+              </uta:VerifyControlAttribute.ActivityToTest>
+              <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <ActivityFunc x:TypeArguments="x:Object">
+                  <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_3">
+                    <uta:ArgumentsBridge.Input>
+                      <InArgument x:TypeArguments="x:Object">
+                        <VariableValue x:TypeArguments="x:Object" Variable="{x:Reference __ReferenceID0}" sap2010:WorkflowViewState.IdRef="VariableValue`1_1" />
+                      </InArgument>
+                    </uta:ArgumentsBridge.Input>
+                  </uta:ArgumentsBridge>
+                </ActivityFunc>
+              </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+              <uta:VerifyControlAttribute.Expression>
+                <InArgument x:TypeArguments="x:String">["S"]</InArgument>
+              </uta:VerifyControlAttribute.Expression>
+            </uta:VerifyControlAttribute>
+            <uta:VerifyControlAttribute AlternativeVerificationTitle="{x:Null}" KeepScreenshots="{x:Null}" OutputMessageFormat="{x:Null}" Result="{x:Null}" ScreenshotsPath="{x:Null}" ContinueOnFailure="True" DisplayName="Verify Control Attribute" sap:VirtualizedContainerService.HintSize="712,339" sap2010:WorkflowViewState.IdRef="VerifyControlAttribute_1" Operator="Contains" OutputArgument="MessageText" TakeScreenshotInCaseOfFailingAssertion="True" TakeScreenshotInCaseOfSucceedingAssertion="True">
+              <uta:VerifyControlAttribute.ActivityToTest>
+                <ActivityAction>
+                  <ucas:ReadStatusbar ContinueOnError="{x:Null}" DisplayName="Read Status Bar 'Statusbar Standard'" sap:VirtualizedContainerService.HintSize="334,265" sap2010:WorkflowViewState.IdRef="ReadStatusbar_1" MessageText="[SapReturnMessage]">
+                    <ucas:ReadStatusbar.MessageData>
+                      <OutArgument x:TypeArguments="s1:String[]">
+                        <VariableReference x:TypeArguments="s1:String[]" sap2010:WorkflowViewState.IdRef="VariableReference`1_8">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="s1:String[]" Name="_autogenerated_MessageData" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageData>
+                    <ucas:ReadStatusbar.MessageId>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_6">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageId" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageId>
+                    <ucas:ReadStatusbar.MessageNumber>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_7">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageNumber" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageNumber>
+                    <ucas:ReadStatusbar.MessageType>
+                      <OutArgument x:TypeArguments="x:String">
+                        <VariableReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="VariableReference`1_5">
+                          <VariableReference.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageType" />
+                          </VariableReference.Variable>
+                        </VariableReference>
+                      </OutArgument>
+                    </ucas:ReadStatusbar.MessageType>
+                    <ucas:ReadStatusbar.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="1742b067-0ed5-422e-8452-b2bf60a528ba" InformativeScreenshot="fabc48b7119251c25a5c84f3a40ab623" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Standard Order: Overview' /&gt;&lt;sap id='sbar' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ucas:ReadStatusbar.Target>
+                  </ucas:ReadStatusbar>
+                </ActivityAction>
+              </uta:VerifyControlAttribute.ActivityToTest>
+              <uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+                <ActivityFunc x:TypeArguments="x:Object">
+                  <uta:ArgumentsBridge sap2010:WorkflowViewState.IdRef="ArgumentsBridge_1">
+                    <uta:ArgumentsBridge.Input>
+                      <InArgument x:TypeArguments="x:Object">
+                        <VariableValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="VariableValue`1_2">
+                          <VariableValue.Variable>
+                            <Variable x:TypeArguments="x:String" Name="_autogenerated_MessageText" />
+                          </VariableValue.Variable>
+                        </VariableValue>
+                      </InArgument>
+                    </uta:ArgumentsBridge.Input>
+                  </uta:ArgumentsBridge>
+                </ActivityFunc>
+              </uta:VerifyControlAttribute.ArgumentsBridgeActivity>
+              <uta:VerifyControlAttribute.Expression>
+                <InArgument x:TypeArguments="x:String">["Standard Order"]</InArgument>
+              </uta:VerifyControlAttribute.Expression>
+            </uta:VerifyControlAttribute>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAKGSURBVFhH7ZXfa1JRHMCP3hVB1FAKaqS7NI1gex1U/rhXljPoh1BtowbRqpcRRG1LvdfqPRfVqxRNW2NOh8OtoL0YVKN/wP0BgwW1mo4p6tVx6nvxFOgcbXov+XA/8HkS7vl4zvneixQUFBQUFKRDTe1SU7v3UGBTg0iRNISovc2ovdfdZfNGONDbAHIsH2ZIHkL7O0yo837QBz8IIP7PChAXPWrrp0leQwWKcSHdSecxklaiQQKLrDcc05suGlRUk4qkldjXfgp1jgR8Nj4sgFhaq8ZUusFwoXib/bqeJJXoOm03goZzA3cM/U9iL66OvhNALKV9j99i+8PpUmz1OPFY542OW+VxIqlM/kMynYuvrufii0s/lz4lljc+JpaxlD6d/oId3inMclUD8xA3STNXdCSpnFRG+JVM57EcroJzC4vY+SCILSPj1QLzcOfGdSecbQiVX7m/yBkY+5zA3cN+bL43hhluqvKICywfierNl1pVamqLOkDywPU8XlnL4tmFBD7rfonNQ2PVdq5o9YTmDfaBFpKxNVIHrqQgDnbu8qPX2CTunCdUGSfeuZjRcePfcSIQmIMHZ2FIcvDPi9+SGVyP4rH+iWO5TXFZho8EaGvv9uJEvq/lur/+SNtn38fP3PUFooPPZwqDz2ZwrZ7ng9g0FCA7V3a04s69goGgkUpNVt8GGq0WaTRa1HyYVnX0eketrgnB6nqDa9Y9gVkeXinlA1GEAYm0WnpaYCDIyjtExk9dgfFMzhkcNw+SpWpDpsAs7GSo7jgRGQIzEOenLT2HyBL1IXFgFgbEDwNxpOY7twl40PELtxl4+DDoqkf4QlyjrX0HdjStCgoKCgoKMoDQb0L04V6A4GiHAAAAAElFTkSuQmCC" InformativeScreenshot="13daf77bf285085f5ef3c094e9faf05b.png" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Sales Documents'/&gt;" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <s:SAP_Logoff DisplayName="SAP Logoff" sap:VirtualizedContainerService.HintSize="788,22" sap2010:WorkflowViewState.IdRef="SAP_Logoff_1" />
+    <Assign DisplayName="Parse Number" sap:VirtualizedContainerService.HintSize="788,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[MessageNo]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[SapReturnMessage.Substring(15,5)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="788,261" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[MessageNo]" />
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:SetAsset TimeoutMS="{x:Null}" AssetName="OrderNumber" DisplayName="Set Asset" sap:VirtualizedContainerService.HintSize="788,132" sap2010:WorkflowViewState.IdRef="SetAsset_1" Value="[MessageNo]" />
+  </Sequence>
+</Activity>
