@@ -18,4 +18,4 @@ jobs:
       - name: Pack and Test
         run: |
           cd C:\UiPath.CLI.Windows.23.6.8581.19168\tools\
-          uipcli.exe test run "https://cloud.uipath.com/" SalesEngineer -A cybertron -I 2d3dfd3f-701c-4842-85d8-4f0f937dcf42 -S LkfYSb3e*vzQ571E --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read" -s "UiBank API Test Set" -o "Ajay Jagtap"
+          uipcli.exe test run "https://cloud.uipath.com/" SalesEngineer -A cybertron -I 2d3dfd3f-701c-4842-85d8-4f0f937dcf42 -S LkfYSb3e*vzQ571E --applicationScope "OR.Assets OR.BackgroundTasks OR.Execution OR.Folders OR.Jobs OR.Machines.Read OR.Monitoring OR.Robots.Read OR.Settings.Read OR.TestSetExecutions OR.TestSets OR.TestSetSchedules OR.Users.Read" -s "SAP Create Order in GUI" -o "Ajay Jagtap"
